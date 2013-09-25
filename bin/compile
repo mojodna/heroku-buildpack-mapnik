@@ -45,6 +45,17 @@ echo "-----> Configuring build environment"
 export MAPNIK_INPUT_PLUGINS="'/app/vendor/mapnik/lib/mapnik/input'"
 export MAPNIK_FONTS="'/app/vendor/mapnik/lib/mapnik/fonts'"
 
+cat <<EOF > $BUILD_DIR/build_env.sh
+export PATH="$PATH:\$PATH"
+export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH\":$LD_LIBRARY_PATH"
+export LIBRARY_PATH="\$LIBRARY_PATH\":$LIBRARY_PATH"
+export PKG_CONFIG_PATH="\$PKG_CONFIG_PATH\":$PKG_CONFIG_PATH"
+export CPPPATH="\$CPPPATH\":$CPPPATH"
+export CPATH="\$CPATH\":$CPATH"
+export MAPNIK_INPUT_PLUGINS="$MAPNIK_INPUT_PLUGINS"
+export MAPNIK_FONTS="$MAPNIK_FONTS"
+EOF
+
 echo "-----> Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
 
