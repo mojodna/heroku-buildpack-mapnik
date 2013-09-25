@@ -47,6 +47,8 @@ export MAPNIK_FONTS="'/app/vendor/mapnik/lib/mapnik/fonts'"
 
 echo "-----> Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
+
+echo "export PATH=\"$(echo $PATH | sed 's%/tmp/build_[^/]*%/app%g'):\$PATH\"" > $BUILD_DIR/.profile.d/mapnik-deps-path.sh
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH\":$(echo $LD_LIBRARY_PATH | sed 's%/tmp/build_[^/]*%/app%g')" > $BUILD_DIR/.profile.d/mapnik-deps-ld_library_path.sh
 echo "export LIBRARY_PATH=\"\$LIBRARY_PATH\":$(echo $LIBRARY_PATH | sed 's%/tmp/build_[^/]*%/app%g')" > $BUILD_DIR/.profile.d/mapnik-deps-library_path.sh
 echo "export PKG_CONFIG_PATH=\"\$PKG_CONFIG_PATH\":$(echo $PKG_CONFIG_PATH | sed 's%/tmp/build_[^/]*%/app%g')" > $BUILD_DIR/.profile.d/mapnik-deps-pkg_config_path.sh
