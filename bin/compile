@@ -7,6 +7,9 @@ set -e # fail fast
 BUILD_DIR=$1
 CACHE_DIR=$2
 
+# use pigz if available for (potentially) faster decompression
+type pigz > /dev/null 2>&1 && alias tar='tar --use-compress-program=pigz'
+
 function indent() {
   c='s/^/       /'
   case $(uname) in
