@@ -62,9 +62,9 @@ mkdir -p $BUILD_DIR/.profile.d
 cat <<EOF > $BUILD_DIR/.profile.d/mapnik.sh
 # Mapnik build and runtime paths
 export PATH="${PATH//$BUILD_DIR//app}:\$PATH"
-export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH":${LD_LIBRARY_PATH//$BUILD_DIR//app}"
-export LIBRARY_PATH="\$LIBRARY_PATH":${LIBRARY_PATH//$BUILD_DIR//app}"
-export PKG_CONFIG_PATH="\$PKG_CONFIG_PATH":${PKG_CONFIG_PATH//$BUILD_DIR//app}"
-export CPPPATH="\$CPPPATH":${CPPPATH//$BUILD_DIR//app}"
-export CPATH="\$CPATH":${CPATH//$BUILD_DIR//app}"
+export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:${LD_LIBRARY_PATH//$BUILD_DIR//app}"
+export LIBRARY_PATH="\$LIBRARY_PATH:${LIBRARY_PATH//$BUILD_DIR//app}"
+export PKG_CONFIG_PATH="\$PKG_CONFIG_PATH:${PKG_CONFIG_PATH//$BUILD_DIR//app}"
+export CPPPATH="\$CPPPATH:${CPPPATH//$BUILD_DIR//app}"
+export CPATH="\$CPATH:${CPATH//$BUILD_DIR//app}"
 EOF
