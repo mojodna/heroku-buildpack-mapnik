@@ -60,10 +60,10 @@ echo "-----> Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
 
 cat <<EOF > $BUILD_DIR/.profile.d/mapnik-deps.sh
-export PATH="$(echo $PATH | sed 's%/tmp/build_[^/]*%/app%g'):\$PATH"
-export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH\":$(echo $LD_LIBRARY_PATH | sed 's%/tmp/build_[^/]*%/app%g')"
-export LIBRARY_PATH="\$LIBRARY_PATH\":$(echo $LIBRARY_PATH | sed 's%/tmp/build_[^/]*%/app%g')"
-export PKG_CONFIG_PATH="\$PKG_CONFIG_PATH\":$(echo $PKG_CONFIG_PATH | sed 's%/tmp/build_[^/]*%/app%g')"
-export CPPPATH="\$CPPPATH\":$(echo $CPPPATH | sed 's%/tmp/build_[^/]*%/app%g')"
-export CPATH="\$CPATH\":$(echo $CPATH | sed 's%/tmp/build_[^/]*%/app%g')"
+export PATH="${PATH//$BUILD_DIR/\/app}:\$PATH"
+export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH\":${LD_LIBRARY_PATH//$BUILD_DIR/\/app}"
+export LIBRARY_PATH="\$LIBRARY_PATH\":${LIBRARY_PATH//$BUILD_DIR/\/app}"
+export PKG_CONFIG_PATH="\$PKG_CONFIG_PATH\":${PKG_CONFIG_PATH//$BUILD_DIR/\/app}"
+export CPPPATH="\$CPPPATH\":${CPPPATH//$BUILD_DIR/\/app}"
+export CPATH="\$CPATH\":${CPATH//$BUILD_DIR/\/app}"
 EOF
