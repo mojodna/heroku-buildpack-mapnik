@@ -48,7 +48,7 @@ echo "-----> Configuring build environment"
 export MAPNIK_INPUT_PLUGINS="'/app/vendor/mapnik/lib/mapnik/input'"
 export MAPNIK_FONTS="'/app/vendor/mapnik/lib/mapnik/fonts'"
 
-cat <<EOF > $BUILD_DIR/build_env.sh
+cat <<EOF > export
 export PATH="$PATH:\$PATH"
 export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH\":$LD_LIBRARY_PATH"
 export LIBRARY_PATH="\$LIBRARY_PATH\":$LIBRARY_PATH"
