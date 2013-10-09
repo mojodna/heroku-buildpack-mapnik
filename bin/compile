@@ -7,6 +7,7 @@ set -e # fail fast
 BUILD_DIR=$1
 CACHE_DIR=$2
 BUILDPACK_DIR=$(cd $(dirname $0)/..; pwd)
+BUILDPACK_NAME=mapnik
 
 # use pigz if available for (potentially) faster decompression
 type pigz > /dev/null 2>&1 && alias tar='tar --use-compress-program=pigz'
@@ -63,7 +64,7 @@ EOF
 echo "-----> Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
 
-cat <<EOF > $BUILD_DIR/.profile.d/mapnik.sh
+cat <<EOF > $BUILD_DIR/.profile.d/$BUILDPACK_NAME.sh
 # Mapnik build and runtime paths
 export PATH="${PATH//$BUILD_DIR//app}:\$PATH"
 export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:${LD_LIBRARY_PATH//$BUILD_DIR//app}"
