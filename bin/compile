@@ -40,10 +40,10 @@ function vendor() {
 
 echo "-----> Vendoring binaries"
 vendor "https://s3.amazonaws.com/mojodna-heroku/boost-1.54.0-1.tar.gz"   "$BUILD_DIR/vendor/boost"
-vendor "https://s3.amazonaws.com/mojodna-heroku/gdal-1.10.0-1.tar.gz"    "$BUILD_DIR/vendor/gdal"
+vendor "https://s3.amazonaws.com/mojodna-heroku/gdal-1.10.1-1.tar.gz"    "$BUILD_DIR/vendor/gdal"
 vendor "https://s3.amazonaws.com/mojodna-heroku/icu4c-51_2-1.tar.gz"     "$BUILD_DIR/vendor/icu"
 vendor "https://s3.amazonaws.com/mojodna-heroku/jemalloc-3.4.0-1.tar.gz" "$BUILD_DIR/vendor/jemalloc"
-vendor "https://s3.amazonaws.com/mojodna-heroku/mapnik-2.3.x-debug@5e86e86.tar.gz"   "$BUILD_DIR/vendor/mapnik"
+vendor "https://s3.amazonaws.com/mojodna-heroku/mapnik-debug-2.3.x@5e86e86-2.tar.gz" "$BUILD_DIR/vendor/mapnik"
 vendor "https://s3.amazonaws.com/mojodna-heroku/proj-4.8.0-1.tar.gz"     "$BUILD_DIR/vendor/proj"
 vendor "https://s3.amazonaws.com/mojodna-heroku/protobuf-2.5.0-1.tar.gz" "$BUILD_DIR/vendor/protobuf"
 
