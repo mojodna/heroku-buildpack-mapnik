@@ -19,18 +19,18 @@ build environment (`CPATH`, `LIBRARY_PATH`, etc.) to be set correctly.)
 There are multiple variants present as branches. To use a specific variant, add
 `#branch` to the Mapnik buildpack URL in `.buildpacks`.
 
-* [master](https://github.com/mojodna/heroku-buildpack-mapnik/tree/master)
-  - Mapnik 2.2
-* [jemalloc](https://github.com/mojodna/heroku-buildpack-mapnik/tree/jemalloc)
-  - Mapnik 2.2 w/ [jemalloc](http:/www.canonware.com/jemalloc/)
-* [2.3.x](https://github.com/mojodna/heroku-buildpack-mapnik/tree/2.3.x)
-  - Mapnik 2.3.x (see
-    [`bin/compile`](https://github.com/mojodna/heroku-buildpack-mapnik/tree/2.3.x/bin/compile)
-    for the revision provided.
-* [2.3.x+jemalloc](https://github.com/mojodna/heroku-buildpack-mapnik/tree/2.3.x+jemalloc)
-  - Mapnik 2.3.x with jemalloc
-* [2.3.x-debug+jemalloc](https://github.com/mojodna/heroku-buildpack-mapnik/tree/2.3.x-debug+jemalloc)
-  - Debug build of Mapnik 2.3.x with jemalloc
+* [master](https://github.com/mojodna/heroku-buildpack-mapnik/tree/master) -
+  Mapnik 2.2
+* [jemalloc](https://github.com/mojodna/heroku-buildpack-mapnik/tree/jemalloc) -
+  Mapnik 2.2 w/ [jemalloc](http:/www.canonware.com/jemalloc/)
+* [2.3.x](https://github.com/mojodna/heroku-buildpack-mapnik/tree/2.3.x) -
+  Mapnik 2.3.x (see
+  [`bin/compile`](https://github.com/mojodna/heroku-buildpack-mapnik/tree/2.3.x/bin/compile)
+  for the revision provided).
+* [2.3.x+jemalloc](https://github.com/mojodna/heroku-buildpack-mapnik/tree/2.3.x+jemalloc) -
+  Mapnik 2.3.x with jemalloc
+* [2.3.x-debug+jemalloc](https://github.com/mojodna/heroku-buildpack-mapnik/tree/2.3.x-debug+jemalloc) -
+  Debug build of Mapnik 2.3.x with jemalloc
 
 When creating a new Heroku app:
 
