@@ -12,6 +12,9 @@ BUILDPACK_NAME=mapnik
 # use pigz if available for (potentially) faster decompression
 type pigz > /dev/null 2>&1 && alias tar='tar --use-compress-program=pigz'
 
+alias fetch="curl -s"
+type htcat > /dev/null 2>&1 && echo "Using htcat" && alias fetch="htcat"
+
 function indent() {
   c='s/^/       /'
   case $(uname) in
@@ -26,7 +29,7 @@ function vendor() {
 
   echo "Fetching $binary" | indent
   mkdir -p $path
-  curl $binary -s -o - | tar xz -C $path -f -
+  fetch $binary | tar xz -C $path -f -
 
   [ -d "$path/bin" ] && export PATH=$path/bin:$PATH
   export CPPPATH="$path/include:$CPPPATH"
