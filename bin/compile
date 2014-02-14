@@ -26,7 +26,7 @@ function vendor() {
 
   echo "Fetching $binary" | indent
   mkdir -p $path
-  htcat $binary | tar xz -C $path -f -
+  htcat $binary | tar zx -C $path
 
   [ -d "$path/bin" ] && export PATH=$path/bin:$PATH
   export CPPPATH="$path/include:$CPPPATH"
