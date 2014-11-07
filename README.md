@@ -1,5 +1,9 @@
 # heroku-buildpack-mapnik
 
+**NOTE**: With the GA of Heroku's `cedar-14` stack and `node-mapnik`'s bundling
+of binaries, this is no longer necessary (or useful in most circumstances, as it
+does not include Python bindings).
+
 I am a Heroku buildpack that installs [Mapnik](http://mapnik.org) and its
 dependencies ([Boost](http://boost.org/), [GDAL](http://gdal.org/),
 ICU(http://icu-project.org/), [proj](https://trac.osgeo.org/proj/), and
